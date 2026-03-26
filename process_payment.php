@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 // Daraja API configuration
 $consumer_key = 'nk16Y74eSbTaGQgc9WF8j6FigApqOMWr';
 $consumer_secret = '40fD1vRXCq90XFaU';
-$business_short_code = '174379';
+$business_short_code = '174379'; //Store Number for Buy goods with Till Number
 $passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
 $callback_url = 'https://655a-196-250-209-180.ngrok-free.app/callback.php';
 
@@ -53,7 +53,7 @@ function initiateSTKPush($access_token, $business_short_code, $passkey, $amount,
         'TransactionType' => 'CustomerPayBillOnline',
         'Amount' => $amount,
         'PartyA' => $phone_number,
-        'PartyB' => $business_short_code,
+        'PartyB' => $business_short_code, //Till for Buy goods with Till Number
         'PhoneNumber' => $phone_number,
         'CallBackURL' => $callback_url,
         'AccountReference' => 'CompanyXLTD',
